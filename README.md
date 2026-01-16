@@ -1,6 +1,6 @@
 # Practica 1: Asignaciones
 
-**Comandos**
+**Comandos**</br>
 Para subir cambios:</br>
 1.- git add . (Añadir todos los cambios que hiciste)</br>
 2.- git commit -m "Mensaje del cambio" (Guardar con un mensaje o titulo de lo que hiciste en el cambio)</br>
