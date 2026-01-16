@@ -1,5 +1,10 @@
 # Practica 1: Asignaciones
 
+## Primeros pasos </br>
+1.- Abre una terminal en una carpeta o lugar/directorio donde quieras tener los archivos o tambien puedes abrir en VS code ese lugar y en la terminal hacer el siguiente comando:</br>
+2.- git clone https://github.com/4IRI2V-AID/Practica-1.git</br>
+3.- Abrir en VS code la carpeta o lo que uses</br>
+
 **Comandos**</br>
 Para subir cambios:</br>
 1.- git add . (Añadir todos los cambios que hiciste)</br>
