@@ -22,7 +22,45 @@ def sumar(): #Todo mal GG
                 return
             else:
                 print("\nColoca una opcion valida  (s/n)")
-                        
+
+def factorial():
+    print("\n[____Factorial____]\n")
+    while True:
+        while True:
+            n = input("\nIngrese el numero que quiere calcular: ")
+
+            try:
+                n = int(n) 
+                text = "1"   
+                r = 1                  
+                if (n < 1):
+                    print("\nIngrese un numero mayor que 0\n")
+                    continue
+                for i in range(n):                    
+                    r = r * (i + 1)
+                    if (i != 0):
+                        text = text + "x" + str(i + 1)
+                print("\nResultado: " + text + " = " + str(r))
+                break         
+
+            except ValueError:
+                print("\nIngrese un numero valido\n")
+
+        while True:
+            salir = input("\n ¿Calcular otro numero? (s/n):").lower()
+            
+            if (salir == "s"):
+                break
+            
+            elif (salir == "n"):
+                print("\nVolviendo....")
+                return
+            
+            else:
+                print("\nIngrese una opcion valida")
+        print("-----------------------------------")                
+
+
 menu = 0
 while (menu != "9"):
     menu = input("Menu  \n1.-Suma \n2.-Multiplicacion \n3.-Division \n4.-Factorial \n5.-Tablas de multiplicar \n6.-Cudrado y cubo \n7.-Promedio \n8.-Mayor y minimo \n9.-Salir\nIngrese una opcion: ")
@@ -34,7 +72,7 @@ while (menu != "9"):
         case "3":
             print("\nDivision\n")
         case "4": 
-            print("\nFactorial\n")
+            factorial()
         case "5": 
             print("\nTablas\n")
         case "6":
