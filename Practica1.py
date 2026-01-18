@@ -25,34 +25,67 @@ def sumar(): #Todo mal GG Panchisco
                 
 def tablas(): #Tablas individual y del 1 al 10
     def tablaind():
+        GREEN = "\033[32m"
+        RESET = "\033[0m"
+        ANCHO = 27
         while True:
-            try:
-                num = int(input("\nIngrese un numero para ver su tabla: "))
-                if 1 <= num <= 1000:
-                    break
-                else:
-                    print("\nDemasiados caracteres, Escriba un numero mas chico: ")
-            except ValueError:
-                print("\nIngrese solo numeros")
-        print(f"\n[____Tabla del numero {num}____]")
-    def alltabla():
-                        print("\nColoca una opcion valida  (s/n)")
-    def clean():
-        print("\nColoca una opcion valida  (s/n)")
+            while True:
+                try:
+                    num = int(input("\nIngrese un numero para ver su tabla: "))
+                    if 1 <= num <= 1000:
+                        break
+                    else:
+                        print("\nDemasiados caracteres, Escriba un numero mas chico: ")
+                except ValueError:
+                    print("\nIngrese solo numeros")
+            print(f"""{GREEN}
+        ________________________________{RESET}
+        {GREEN}|{RESET}{f" Tabla del numero {num} ".center(ANCHO)}{GREEN}|
+        |________________________________|{RESET}
+        """)
+            for i in range(1,11):
+                contenido = f"{num} x {i} = {num * i}"
+                print(f"{GREEN}|{RESET}{contenido.center(ANCHO)}{GREEN}|{RESET}")
+            print(f"{GREEN}|________________________________|{RESET}")
 
+            while True:
+                opcion = input("\n1.)  Otra tabla \n2.)  Volver al menu: ")
+                if opcion =="1":
+                    break
+                elif opcion =="2":
+                    return
+                else:
+                    print("\nOpcion invalida, intenta de nuevo")
+                  
+    def alltabla():
+        GREEN = "\033[32m"
+        RESET = "\033[0m"
+        ANCHO = 27
+        for num in range(1, 11):
+            print(f"""
+    {GREEN}________________________________{RESET}
+    {GREEN}|{RESET}{f" Tabla del {num} ".center(ANCHO)}{GREEN}|
+    |________________________________|{RESET}
+    """)
+            for i in range(1, 11):
+                contenido = f"{num} x {i} = {num * i}"
+                print(f"{GREEN}|{RESET}{contenido.center(ANCHO)}{GREEN}|{RESET}")
+            print(f"{GREEN}|________________________________|{RESET}")
+        input("\nPresiona ENTER para volver al menu...")
     def mop():
         while True:
-            print("\n[____Menu Tablas de Multiplicar____] \n1.)  Seleccion de tabla \n2.)  Tablas del 1 al 10 \n3.  Limpiar \n4.)  Volver al menu\n")
+            print("\n[____Menu Tablas de Multiplicar____] \n1.)  Seleccion de tabla \n2.)  Tablas del 1 al 10 \n3.)  Volver al menu\n")
             opcion = input("Elige una opcion: ")
             if opcion == "1":
                 tablaind()
             elif opcion == "2":
                 alltabla()
             elif opcion == "3":
-                clean()
-            elif opcion == "4":
                 print("\nRegresando al menu\n")
                 return
+            else:
+                print("\nOpcion invalida")
+    mop()
                       
 menu = 0
 while (menu != "9"):
