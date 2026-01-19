@@ -38,15 +38,13 @@ def tablas(): #Tablas individual y del 1 al 10
                         print("\nDemasiados caracteres, Escriba un numero mas chico: ")
                 except ValueError:
                     print("\nIngrese solo numeros")
-            print(f"""{GREEN}
-        ________________________________{RESET}
-        {GREEN}|{RESET}{f" Tabla del numero {num} ".center(ANCHO)}{GREEN}|
-        |________________________________|{RESET}
-        """)
+            print(f"""{GREEN}_____________________________{RESET}
+{GREEN}|{RESET}{f" Tabla del numero {num} ".center(ANCHO)}{GREEN}|
+|___________________________|{RESET}""")
             for i in range(1,11):
                 contenido = f"{num} x {i} = {num * i}"
                 print(f"{GREEN}|{RESET}{contenido.center(ANCHO)}{GREEN}|{RESET}")
-            print(f"{GREEN}|________________________________|{RESET}")
+            print(f"{GREEN}|___________________________|{RESET}")
 
             while True:
                 opcion = input("\n1.)  Otra tabla \n2.)  Volver al menu: ")
@@ -62,15 +60,13 @@ def tablas(): #Tablas individual y del 1 al 10
         RESET = "\033[0m"
         ANCHO = 27
         for num in range(1, 11):
-            print(f"""
-    {GREEN}________________________________{RESET}
-    {GREEN}|{RESET}{f" Tabla del {num} ".center(ANCHO)}{GREEN}|
-    |________________________________|{RESET}
-    """)
+            print(f"""{GREEN}_____________________________{RESET}
+{GREEN}|{RESET}{f" Tabla del {num} ".center(ANCHO)}{GREEN}|
+|___________________________|{RESET}""")
             for i in range(1, 11):
                 contenido = f"{num} x {i} = {num * i}"
                 print(f"{GREEN}|{RESET}{contenido.center(ANCHO)}{GREEN}|{RESET}")
-            print(f"{GREEN}|________________________________|{RESET}")
+            print(f"{GREEN}|___________________________|{RESET}")
         input("\nPresiona ENTER para volver al menu...")
     def mop():
         while True:
