@@ -120,6 +120,38 @@ def division():
                 print("\nIngrese una opción valida")
         print("-----------------------------------")
         
+def Maximo_minimo():
+    while True:
+        max_numero = float('-inf')
+        min_numero = float('inf')
+
+        while True:
+            try: 
+                num = input("\nIngrese un numero o n para terminar") 
+                if (num == "n"): 
+                    break
+                num = float(num)
+                if num > max_numero:
+                    max_numero = num
+                if num < min_numero:
+                    min_numero = num 
+
+            except ValueError:
+                print("\nError, Ingrese un numero valido")
+
+
+        print("El Maximo es",max_numero)
+        print("El Minimo es",min_numero)
+        
+        while True:
+                salir = input("\n Deseas agregar otros numeros? (s/n):").lower()
+                if salir == "s":
+                    break
+                elif salir == "n":
+                    print("\nRegresando al menu\n")
+                    return
+                else:
+                    print("\nColoca una opcion valida  (s/n)")
 
 menu = 0
 while (menu != "9"):
@@ -140,7 +172,7 @@ while (menu != "9"):
         case "7": 
             print("\nPromedio\n")
         case "8": 
-            print("\nMaximo y minimo\n")
+            Maximo_minimo()
         case "9":
             print("\nSaliendo....\n")
         case _:
