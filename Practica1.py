@@ -1,3 +1,9 @@
+import os
+
+def limpiar():
+    if os.name == "nt":
+        os.system("cls")
+
 def continuar(mensaje): 
     while True:
         salir = input(mensaje).lower()
@@ -93,10 +99,6 @@ def tablas(): #Tablas individual y del 1 al 10
     mop()
 
 def cuadradoycubo():
-    import os
-    def limpiar():
-        if os.name == "nt":
-            os.system("cls")
     opcion=0
     while opcion!=1:
         limpiar()
@@ -112,14 +114,13 @@ def cuadradoycubo():
                 limpiar()
                 print("Ingrese un número válido. Intente de nuevo.")    
         while True:
-            try:            
-                opcion = int(input("\nEscribe 1 para salir, escribe otro número para continuar: "))
+            salir = continuar("\n ¿Calcular otro numero? (s/n): ")
+            if salir == True:
                 break
-            except ValueError:
-                limpiar()
-                print("Ingrese 1 para salir, ingrese cualquier otro número para continuar. Intente de nuevo.")    
-                print("\nOpcion invalida")                      
-
+            else:
+                return
+        print("-----------------------------------")    
+        
 def factorial():
     print("\n[____Factorial____]\n")
     while True:
@@ -265,7 +266,9 @@ def Maximo_minimo():
 
 menu = 0
 while (menu != "9"):
+    limpiar()
     menu = input("Menu  \n1.-Suma \n2.-Multiplicacion \n3.-Division \n4.-Factorial \n5.-Tablas de multiplicar \n6.-Cudrado y cubo \n7.-Promedio \n8.-Maximo y minimo \n9.-Salir\nIngrese una opcion: ")
+    limpiar()
     match menu:
         case "1":
             sumar()
