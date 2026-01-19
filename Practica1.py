@@ -1,4 +1,4 @@
-def sumar(): #Todo mal GG
+def sumar(): #Todo mal GG Panchisco
     while True:
         print("\n[____Suma____] \nIngresa numeros positivos o negativos \nEscribe '=' para obtener el resultado\n")
         total=0
@@ -22,6 +22,67 @@ def sumar(): #Todo mal GG
                 return
             else:
                 print("\nColoca una opcion valida  (s/n)")
+                
+def tablas(): #Tablas individual y del 1 al 10
+    def tablaind():
+        GREEN = "\033[32m"
+        RESET = "\033[0m"
+        ANCHO = 27
+        while True:
+            while True:
+                try:
+                    num = int(input("\nIngrese un numero para ver su tabla: "))
+                    if 1 <= num <= 1000:
+                        break
+                    else:
+                        print("\nDemasiados caracteres, Escriba un numero mas chico: ")
+                except ValueError:
+                    print("\nIngrese solo numeros")
+            print(f"""{GREEN}_____________________________{RESET}
+{GREEN}|{RESET}{f" Tabla del numero {num} ".center(ANCHO)}{GREEN}|
+|___________________________|{RESET}""")
+            for i in range(1,11):
+                contenido = f"{num} x {i} = {num * i}"
+                print(f"{GREEN}|{RESET}{contenido.center(ANCHO)}{GREEN}|{RESET}")
+            print(f"{GREEN}|___________________________|{RESET}")
+
+            while True:
+                opcion = input("\n1.)  Otra tabla \n2.)  Volver al menu: ")
+                if opcion =="1":
+                    break
+                elif opcion =="2":
+                    return
+                else:
+                    print("\nOpcion invalida, intenta de nuevo")
+                  
+    def alltabla():
+        GREEN = "\033[32m"
+        RESET = "\033[0m"
+        ANCHO = 27
+        for num in range(1, 11):
+            print(f"""{GREEN}_____________________________{RESET}
+{GREEN}|{RESET}{f" Tabla del {num} ".center(ANCHO)}{GREEN}|
+|___________________________|{RESET}""")
+            for i in range(1, 11):
+                contenido = f"{num} x {i} = {num * i}"
+                print(f"{GREEN}|{RESET}{contenido.center(ANCHO)}{GREEN}|{RESET}")
+            print(f"{GREEN}|___________________________|{RESET}")
+        input("\nPresiona ENTER para volver al menu...")
+    def mop():
+        while True:
+            print("\n[____Menu Tablas de Multiplicar____] \n1.)  Seleccion de tabla \n2.)  Tablas del 1 al 10 \n3.)  Volver al menu\n")
+            opcion = input("Elige una opcion: ")
+            if opcion == "1":
+                tablaind()
+            elif opcion == "2":
+                alltabla()
+            elif opcion == "3":
+                print("\nRegresando al menu\n")
+                return
+            else:
+                print("\nOpcion invalida")
+    mop()
+                      
 
 def factorial():
     print("\n[____Factorial____]\n")
@@ -160,13 +221,13 @@ while (menu != "9"):
         case "1":
             sumar()
         case "2":
-            print("\nMultiplicacion\n")
+            multiplicacion()
         case "3":
             division()
         case "4": 
             factorial()
         case "5": 
-            multiplicacion()
+            tablas()
         case "6":
             print("\nCuadrado y cubo\n")
         case "7": 
