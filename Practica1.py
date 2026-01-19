@@ -182,16 +182,18 @@ def division():
         print("-----------------------------------")
         
 def Maximo_minimo():
+    print("\n[____Calcular maximo y minimo____] \n")    
+    print("\nIngrese una serie de numeros y se calculara el maximo y minimo.")    
     while True:
         max_numero = float('-inf')
         min_numero = float('inf')
 
         while True:
             try: 
-                num = input("\nIngrese un numero o n para terminar") 
+                num = input("\nIngrese un numero o n para terminar: ") 
                 if (num == "n"): 
                     break
-                num = float(num)
+                num = int(num)
                 if num > max_numero:
                     max_numero = num
                 if num < min_numero:
@@ -205,7 +207,7 @@ def Maximo_minimo():
         print("El Minimo es",min_numero)
         
         while True:
-                salir = input("\n Deseas agregar otros numeros? (s/n):").lower()
+                salir = input("\n Deseas ingresar otra serie de numeros? (s/n):").lower()
                 if salir == "s":
                     break
                 elif salir == "n":
@@ -216,7 +218,7 @@ def Maximo_minimo():
 
 menu = 0
 while (menu != "9"):
-    menu = input("Menu  \n1.-Suma \n2.-Multiplicacion \n3.-Division \n4.-Factorial \n5.-Tablas de multiplicar \n6.-Cudrado y cubo \n7.-Promedio \n8.-Mayor y minimo \n9.-Salir\nIngrese una opcion: ")
+    menu = input("Menu  \n1.-Suma \n2.-Multiplicacion \n3.-Division \n4.-Factorial \n5.-Tablas de multiplicar \n6.-Cudrado y cubo \n7.-Promedio \n8.-Maximo y minimo \n9.-Salir\nIngrese una opcion: ")
     match menu:
         case "1":
             sumar()
