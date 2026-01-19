@@ -121,6 +121,37 @@ def factorial():
                 print("\nIngrese una opcion valida")
         print("-----------------------------------")                
 
+def promedio():
+    print("\n[____Promedio____]")
+    print("Ingresa los valores para calcular el promedio \n")
+    while True:
+        total = 0
+        i = 0        
+        while True:
+            n = input("\nIngrese un numero o -1 para terminar: ")            
+            try:
+                n = float(n)
+                if(n == -1):           
+                    print("\nEl promedio es" + " = " + str(total/i)  + "\n")         
+                    break
+                total = total + n
+                i = i + 1
+            except ValueError:
+                print("Ingresa un numero valido")
+        while True:
+            salir = input("\n ¿Calcular otro promedio? (s/n): ").lower()
+            
+            if (salir == "s"):
+                break
+            
+            elif (salir == "n"):
+                print("\nVolviendo....")
+                return
+            
+            else:
+                print("\nIngrese una opcion valida")
+        print("-----------------------------------")                
+
 
 def multiplicacion():
     while True:
@@ -233,7 +264,7 @@ while (menu != "9"):
         case "6":
             print("\nCuadrado y cubo\n")
         case "7": 
-            print("\nPromedio\n")
+            promedio()
         case "8": 
             Maximo_minimo()
         case "9":
