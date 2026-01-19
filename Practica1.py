@@ -23,7 +23,6 @@ def sumar(): #Todo mal GG
             else:
                 print("\nColoca una opcion valida  (s/n)")
 def cuadradoycubo():
-    import math
     import os
     def limpiar():
         if os.name == "nt":
@@ -32,11 +31,23 @@ def cuadradoycubo():
     while opcion!=1:
         limpiar()
         print("Cálculo del cuadrado y cubo de un número")
-        num=int(input("\nIngresa un número: "))
-        cuadrado=num**2
-        cubo=num**3
-        print("\nEl cuadrado y cubo del número ingresado es:\nCuadrado: ", cuadrado, "\nCubo: ", cubo)
-        opcion = int(input("\nEscribe 1 para salir, escribe otro número para continuar: "))
+        while True:
+            try:
+                num=int(input("\nIngresa un número: "))
+                cuadrado=num**2
+                cubo=num**3
+                print("\nEl cuadrado y cubo del número ingresado es:\nCuadrado: ", cuadrado, "\nCubo: ", cubo)
+                break
+            except ValueError:
+                limpiar()
+                print("Ingrese un número válido. Intente de nuevo.")    
+        while True:
+            try:            
+                opcion = int(input("\nEscribe 1 para salir, escribe otro número para continuar: "))
+                break
+            except ValueError:
+                limpiar()
+                print("Ingrese 1 para salir, ingrese cualquier otro número para continuar. Intente de nuevo.")    
 menu = 0
 while (menu != "9"):
     menu = input("Menu  \n1.-Suma \n2.-Multiplicacion \n3.-Division \n4.-Factorial \n5.-Tablas de multiplicar \n6.-Cudrado y cubo \n7.-Promedio \n8.-Mayor y minimo \n9.-Salir\nIngrese una opcion: ")
