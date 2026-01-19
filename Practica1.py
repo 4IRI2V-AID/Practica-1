@@ -1,3 +1,14 @@
+def continuar(mensaje): 
+    while True:
+        salir = input(mensaje).lower()
+        if salir == "s":
+            return True
+        elif salir == "n":
+            print("\nRegresando al menu...\n")
+            return False
+        else:
+            print("\nColoca una opcion valida  (s/n)")
+
 def sumar(): #Todo mal GG Panchisco
     while True:
         print("\n[____Suma____] \nIngresa numeros positivos o negativos \nEscribe '=' para obtener el resultado\n")
@@ -14,14 +25,12 @@ def sumar(): #Todo mal GG Panchisco
                 except ValueError:
                     print("\nError, Ingrese un numero o '='")
         while True:
-            salir = input("\n Deseas hacer otra suma? (s/n):").lower()
-            if salir == "s":
+            salir = continuar("\n Deseas hacer otra suma? (s/n): ")
+            if salir == True:
                 break
-            elif salir == "n":
-                print("\nRegresando al menu\n")
-                return
             else:
-                print("\nColoca una opcion valida  (s/n)")
+                return
+        print("-----------------------------------")                            
                 
 def tablas(): #Tablas individual y del 1 al 10
     def tablaind():
@@ -108,17 +117,11 @@ def factorial():
                 print("\nIngrese un numero valido\n")
 
         while True:
-            salir = input("\n ¿Calcular otro numero? (s/n):").lower()
-            
-            if (salir == "s"):
+            salir = continuar("\n ¿Calcular otro numero? (s/n): ")
+            if salir == True:
                 break
-            
-            elif (salir == "n"):
-                print("\nVolviendo....")
-                return
-            
             else:
-                print("\nIngrese una opcion valida")
+                return
         print("-----------------------------------")                
 
 def promedio():
@@ -139,18 +142,12 @@ def promedio():
             except ValueError:
                 print("Ingresa un numero valido")
         while True:
-            salir = input("\n ¿Calcular otro promedio? (s/n): ").lower()
-            
-            if (salir == "s"):
+            salir = continuar("\n ¿Calcular otro promedio? (s/n): ")
+            if salir == True:
                 break
-            
-            elif (salir == "n"):
-                print("\nVolviendo....")
-                return
-            
             else:
-                print("\nIngrese una opcion valida")
-        print("-----------------------------------")                
+                return
+        print("-----------------------------------")               
 
 
 def multiplicacion():
@@ -169,14 +166,13 @@ def multiplicacion():
                 except ValueError:
                     print("\nError, Ingrese un numero o '='")
         while True:
-            salir = input("\n Deseas hacer otra multiplicacion? (s/n):").lower()
-            if salir == "s":
+            salir = continuar("\n Deseas hacer otra multiplicacion? (s/n): ")
+            if salir == True:
                 break
-            elif salir == "n":
-                print("\nRegresando al menu\n")
-                return
             else:
-                print("\nColoca una opcion valida  (s/n)")    
+                return
+        print("-----------------------------------")               
+                
 
 
 def division():
@@ -199,18 +195,13 @@ def division():
                 print("\nIngresa valores válidos")
 
         while True:
-            salir = input("\n¿Cálcular otra división? (s/n)").lower()
-
-            if (salir == "s"):
+            salir = continuar("\n¿Cálcular otra división? (s/n): ")
+            if salir == True:
                 break
-
-            elif(salir == "n"):
-                print("\nVolviendo.... ")
-                return
-
             else:
-                print("\nIngrese una opción valida")
-        print("-----------------------------------")
+                return
+        print("-----------------------------------")               
+
         
 def Maximo_minimo():
     print("\n[____Calcular maximo y minimo____] \n")    
@@ -238,14 +229,12 @@ def Maximo_minimo():
         print("El Minimo es",min_numero)
         
         while True:
-                salir = input("\n Deseas ingresar otra serie de numeros? (s/n):").lower()
-                if salir == "s":
-                    break
-                elif salir == "n":
-                    print("\nRegresando al menu\n")
-                    return
-                else:
-                    print("\nColoca una opcion valida  (s/n)")
+            salir = continuar("\n Deseas ingresar otra serie de numeros? (s/n): ")
+            if salir == True:
+                break
+            else:
+                return
+        print("-----------------------------------")               
 
 menu = 0
 while (menu != "9"):
