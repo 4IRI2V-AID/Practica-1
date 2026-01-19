@@ -89,9 +89,36 @@ def tablas(): #Tablas individual y del 1 al 10
                 print("\nRegresando al menu\n")
                 return
             else:
-                print("\nOpcion invalida")
+                print("\nColoca una opcion valida  (s/n)")
     mop()
-                      
+
+def cuadradoycubo():
+    import os
+    def limpiar():
+        if os.name == "nt":
+            os.system("cls")
+    opcion=0
+    while opcion!=1:
+        limpiar()
+        print("Cálculo del cuadrado y cubo de un número")
+        while True:
+            try:
+                num=int(input("\nIngresa un número: "))
+                cuadrado=num**2
+                cubo=num**3
+                print("\nEl cuadrado y cubo del número ingresado es:\nCuadrado: ", cuadrado, "\nCubo: ", cubo)
+                break
+            except ValueError:
+                limpiar()
+                print("Ingrese un número válido. Intente de nuevo.")    
+        while True:
+            try:            
+                opcion = int(input("\nEscribe 1 para salir, escribe otro número para continuar: "))
+                break
+            except ValueError:
+                limpiar()
+                print("Ingrese 1 para salir, ingrese cualquier otro número para continuar. Intente de nuevo.")    
+                print("\nOpcion invalida")                      
 
 def factorial():
     print("\n[____Factorial____]\n")
@@ -252,6 +279,7 @@ while (menu != "9"):
             tablas()
         case "6":
             print("\nCuadrado y cubo\n")
+            cuadradoycubo()
         case "7": 
             promedio()
         case "8": 
