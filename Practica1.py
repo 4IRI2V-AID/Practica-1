@@ -1,4 +1,7 @@
 import os
+import sys
+
+sys.set_int_max_str_digits(0)
 
 def limpiar():
     if os.name == "nt":
@@ -128,7 +131,10 @@ def factorial():
             n = input("\nIngrese el numero que quiere calcular: ")
 
             try:
-                n = int(n) 
+                n = int(n)
+                if (n > 10000):
+                    print("\nIngrese un numero mas pequeño\n")
+                    continue
                 text = "1"   
                 r = 1                  
                 if (n < 1):
@@ -141,7 +147,8 @@ def factorial():
                 print("\nResultado: " + text + " = " + str(r))
                 break         
 
-            except ValueError:
+            except ValueError as err:
+                print(err)
                 print("\nIngrese un numero valido\n")
 
         while True:
@@ -167,7 +174,7 @@ def promedio():
                     break
                 total = total + n
                 i = i + 1
-            except ValueError:
+            except ValueError:                 
                 print("Ingresa un numero valido")
         while True:
             salir = continuar("\n ¿Calcular otro promedio? (s/n): ")
@@ -267,7 +274,7 @@ def Maximo_minimo():
 menu = 0
 while (menu != "9"):
     limpiar()
-    menu = input("Menu  \n1.-Suma \n2.-Multiplicacion \n3.-Division \n4.-Factorial \n5.-Tablas de multiplicar \n6.-Cudrado y cubo \n7.-Promedio \n8.-Maximo y minimo \n9.-Salir\nIngrese una opcion: ")
+    menu = input("Menu  \n1.-Suma \n2.-Multiplicacion \n3.-Division \n4.-Factorial \n5.-Tablas de multiplicar \n6.-Cuadrado y cubo \n7.-Promedio \n8.-Maximo y minimo \n9.-Salir\nIngrese una opcion: ")
     limpiar()
     match menu:
         case "1":
